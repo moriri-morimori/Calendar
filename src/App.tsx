@@ -3,8 +3,15 @@ import { Calendar } from "./components/Calendar";
 
 export default function App() {
   return (
-    <Box sx={{ p: 3, textAlign: "center" }}>
-      <Typography variant="h4">カレンダーアプリ</Typography>
+    <Box sx={{ 
+      p: 3, 
+      textAlign: "center",
+      position: "absolute",
+      top: "20%",
+      left: "50%",
+      transform: "translate(-50%, -50%)"
+      }}>
+      <Typography variant="h4">カレンダー</Typography>
       {/* Typography = div */}
       <Calendar />
     </Box>
