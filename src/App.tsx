@@ -7,7 +7,7 @@ export default function App() {
       p: 3, 
       textAlign: "center",
       position: "absolute",
-      top: "30%",
+      top: "40%",
       left: "50%",
       transform: "translate(-50%, -50%)"
       }}>

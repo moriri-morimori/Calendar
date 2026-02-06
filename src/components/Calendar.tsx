@@ -26,9 +26,10 @@ export const Calendar = () => {
         sx={{
           display: "grid",
           gridTemplateColumns: "repeat(7, 1fr)",
-          mt: 2,
+          mt: 3,
           textAlign: "center",
           fontWeight: "bold",
+          fontSize: "1.2rem"
         }}
       >
         {weekDays.map((day) => (
@@ -50,7 +51,8 @@ export const Calendar = () => {
             key={index}
             sx={{
               border: "1px solid #ccc",
-              height: 50,
+              height: 90,
+              fontSize: "1.3rem",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",

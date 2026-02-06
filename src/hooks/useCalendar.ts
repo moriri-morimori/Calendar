@@ -16,13 +16,13 @@ export const useCalendar = () => {
     setCurrentDate(new Date(year, month + 1, 1));
   };
 
-  const days :(null | number)[] =[]; // = const days: Array<number | null> = [];
+  const days :(null | number)[] =[]; // = const days: Array<number | null> = [];(nullかnumberしか入れられないという指定)
 
   for (let i = 0; i < firstDay; i++) { //getDay()は曜日を数字として取り出す 日曜＝０、月曜＝１、...
     days.push(null);
   }
 
-  for (let i = 0; i < lastDate; i++) {
+  for (let i = 1; i < lastDate; i++) {
     days.push(i);
   }
 
