@@ -2,7 +2,7 @@ import { Box, Button, Typography } from "@mui/material";
 import { useCalendar } from "../hooks/useCalendar";
 
 export const Calendar = () => {
-  const { year, month, prevMonth, nextMonth } = useCalendar();
+  const { year, month, prevMonth, nextMonth, days, weekDays} = useCalendar();
 
   return (
     <Box>
@@ -22,11 +22,46 @@ export const Calendar = () => {
         >
           次の月 →
         </Button>
+        <Box
+        sx={{
+          display: "grid",
+          gridTemplateColumns: "repeat(7, 1fr)",
+          mt: 2,
+          textAlign: "center",
+          fontWeight: "bold",
+        }}
+      >
+        {weekDays.map((day) => (
+          <Box key={day}>{day}</Box>
+        ))}
       </Box>
 
-      <Typography sx={{ mt: 3 }}>
-        ここにカレンダーのマス目を作る
-      </Typography>
+      {/* カレンダー本体 */}
+      <Box
+        sx={{
+          display: "grid",
+          gridTemplateColumns: "repeat(7, 1fr)",
+          gap: 1,
+          mt: 1,
+        }}
+      >
+        {days.map((d, index) => (
+          <Box
+            key={index}
+            sx={{
+              border: "1px solid #ccc",
+              height: 50,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            {d}
+          </Box>
+        ))}
+      </Box>
+
+      </Box>
     </Box>
   );
 };
