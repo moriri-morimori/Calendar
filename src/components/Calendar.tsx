@@ -1,69 +1,20 @@
-import { Box, Button, Typography } from "@mui/material";
-import { useCalendar } from "../hooks/useCalendar";
+import { Calendar } from "./ui/calendar";
+import React from "react";
 
-export const Calendar = () => {
-  const { year, month, prevMonth, nextMonth, days, weekDays} = useCalendar();
+export const Calendars = () => {
+const [date, setDate] = React.useState<Date | undefined>(new Date())
 
-  return (
-    <Box>
-      <Typography variant="h5">
-        {year}年 {month + 1}月
-      </Typography>
-
-      <Box sx={{ mt: 2 }}>
-        <Button variant="contained" onClick={prevMonth}>
-          ← 前の月
-        </Button>
-
-        <Button
-          variant="contained"
-          onClick={nextMonth}
-          sx={{ ml: 1 }}
-        >
-          次の月 →
-        </Button>
-        <Box
-        sx={{
-          display: "grid",
-          gridTemplateColumns: "repeat(7, 1fr)",
-          mt: 3,
-          textAlign: "center",
-          fontWeight: "bold",
-          fontSize: "1.2rem"
-        }}
-      >
-        {weekDays.map((day) => (
-          <Box key={day}>{day}</Box>
-        ))}
-      </Box>
-
-      {/* カレンダー本体 */}
-      <Box
-        sx={{
-          display: "grid",
-          gridTemplateColumns: "repeat(7, 1fr)",
-          gap: 1,
-          mt: 1,
-        }}
-      >
-        {days.map((d, index) => (
-          <Box
-            key={index}
-            sx={{
-              border: "1px solid #ccc",
-              height: 90,
-              fontSize: "1.3rem",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            {d}
-          </Box>
-        ))}
-      </Box>
-
-      </Box>
-    </Box>
-  );
+return (
+<div className="p-4">
+  <Calendar
+    mode="single"
+    selected={date}
+    onSelect={setDate}
+    className="rounded-lg border"
+  />
+  <p className="mt-4 text-lg font-bold">
+        選択日: {date?.toLocaleDateString()}
+      </p>
+  </div>
+);
 };

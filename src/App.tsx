@@ -1,5 +1,5 @@
 import { Box, Typography } from "@mui/material";
-import { Calendar } from "./components/Calendar";
+import { Calendars } from "./components/Calendar";
 
 export default function App() {
   return (
@@ -13,7 +13,7 @@ export default function App() {
       }}>
       <Typography variant="h4">カレンダー</Typography>
       {/* Typography = div */}
-      <Calendar />
+      <Calendars />
     </Box>
   );
 }
