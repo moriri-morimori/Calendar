@@ -17,7 +17,7 @@ export function Component() {
             }`
           }
         >
-          Home
+          カレンダー
         </NavLink>
 
         <NavLink
@@ -28,7 +28,7 @@ export function Component() {
             }`
           }
         >
-          Log
+          収支
         </NavLink>
       </div>
     </div>
