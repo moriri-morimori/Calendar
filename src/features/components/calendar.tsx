@@ -1,5 +1,6 @@
 "use clint";
 import React from "react";
+import { ja } from "date-fns/locale"
 import { Calendar } from "../../shared/ui/calendar";
 
 export function CalendarPage() {
@@ -12,6 +13,7 @@ export function CalendarPage() {
         onSelect={setDate}
         className="rounded-lg border scale-150"
         captionLayout="dropdown"
+        locale={ja}
       />
     </div>
   );
