@@ -1,20 +1,22 @@
-"use clint";
-import React from "react";
+import { Calendar } from "@/shared/ui/calendar"
 import { ja } from "date-fns/locale"
-import { Calendar } from "../../shared/ui/calendar";
 
-export function CalendarPage() {
-  const [date, setDate] = React.useState<Date | undefined>(new Date());
+export function CalendarPage({
+  selectedDate,
+  setSelectedDate,
+}: {
+  selectedDate: Date | undefined
+  setSelectedDate: (date: Date | undefined) => void
+}) {
   return (
-    <div className="flex justify-center items-center min-h-screen">
-        <Calendar
+    <div className="w-full h-full p-4">
+      <Calendar
         mode="single"
-        selected={date}
-        onSelect={setDate}
-        className="rounded-lg border scale-150"
-        captionLayout="dropdown"
+        selected={selectedDate}
+        onSelect={setSelectedDate}
         locale={ja}
+        className="w-full"
       />
     </div>
-  );
+  )
 }
