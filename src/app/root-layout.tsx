@@ -21,7 +21,7 @@ export function Component() {
         </NavLink>
 
         <NavLink
-          to="/attendance-log"
+          to="/income-expenses-log"
           className={({ isActive }) =>
             `flex-1 flex items-center justify-center ${
               isActive ? "text-blue-600 font-bold" : "text-gray-500"

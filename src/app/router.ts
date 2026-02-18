@@ -10,8 +10,8 @@ export const router = createBrowserRouter([
         lazy: () => import("@/pages/home"),
       },
       {
-        path: "attendance-log",
-        lazy: () => import("@/pages/attendance-log"),
+        path: "income-expenses-log",
+        lazy: () => import("@/pages/income-expenses-log"),
       },
     ],
   },
